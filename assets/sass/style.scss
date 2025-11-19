@@ -152,7 +152,8 @@ ul {
 }
 
 .steps {
-    padding: 100px 0 60px 0;
+    background-color: #F4F6F8;
+    padding: 100px 0 80px 0;
 
     &__title {
         font-family: Montserrat;
@@ -202,7 +203,7 @@ ul {
         border-top: none;
     }
 
-    &__item--highlight {
+    &__item--highlight:hover {
         // background: #fff;
         // // border-radius: 12px;
         // // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -230,13 +231,195 @@ ul {
     }
 }
 
+// SCSS kodi o'zgarishsiz qoladi, chunki u 3 ustunli gridni qo'llab-quvvatlaydi.
+
+// O'zgaruvchilar (Variables)
+$container-max-width: 1460px;
+$color-primary-red: #ff0033;
+$color-text-dark: #000000;
+$color-text-medium: #666;
+$color-light-pink: #ffe0e6;
+
+// Responsivlik Breakpointlari
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 768px;
+
+.container {
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section__rocars {
+    padding: 40px 0;
+
+    &__title {
+        font-size: 2em;
+        margin-bottom: 30px;
+        color: $color-text-dark;
+        font-weight: bold;
+    }
+
+    &__wrapper {
+        display: grid;
+        // Desktop (3 ustun)
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+
+        // Planshet uchun responsivlik (2 ustun)
+        @media (max-width: $breakpoint-tablet) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        // Mobil telefon uchun responsivlik (1 ustun)
+        @media (max-width: $breakpoint-mobile) {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        display: flex;
+    }
+}
+
+.car-card {
+    width: 100%;
+    background: white;
+    border-radius: 36px;
+    box-shadow: 0px 2px 50px 0px #0000001F;
+
+    &__image-wrapper {}
+
+    &__image {
+        padding: 15px;
+    }
+
+    &__content {
+        padding: 20px 25px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 24px;
+        line-height: 34px;
+        margin-bottom: 15px;
+        color: $color-text-dark;
+    }
+
+    &__specs-list {
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    &__spec-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px 0;
+        border-bottom: 1px dotted #ddd;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    &__spec-label,
+    &__spec-value {
+        font-size: 0.95em;
+    }
+
+    &__spec-label {
+        color: $color-text-medium;
+    }
+
+    &__spec-value {
+        font-weight: bold;
+        color: $color-text-dark;
+    }
+
+    &__price-info {
+        display: flex;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__price-col {
+        flex-basis: 50%;
+        padding: 0;
+
+        &--old {
+            padding: 10px 5px 10px 0;
+            text-align: left;
+
+            .car-card__price-amount-old {
+                color: $color-text-medium;
+                text-decoration: line-through;
+                font-size: 1em;
+            }
+
+            .car-card__price-label-old {
+                font-size: 0.75em;
+            }
+        }
+
+        &--new {
+            background-color: $color-light-pink;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__price-amount-new {
+        font-size: 1.4em;
+        font-weight: 900;
+        color: $color-primary-red;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    &__price-label-new {
+        font-size: 0.75em;
+        color: $color-primary-red;
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    &__button {
+        width: 100%;
+        background-color: $color-primary-red;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1em;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken($color-primary-red, 10%);
+        }
+    }
+}
+
 
 $main-bg: #fff;
-$footer-bg: #f4f4f4; // Ochiq kulrang fon
+$footer-bg: #f4f4f4;
 $red-accent: #ff0033;
 $text-color: #333;
 $light-text-color: #666;
-$border-color: #ffcdd5; // Engil pushti chegara
+$border-color: #ffcdd5;
 
 @mixin flex-center-y {
     display: flex;
@@ -273,7 +456,7 @@ body {
 
 .contact-block {
     background-color: white;
-    border: 2px solid $border-color; 
+    border: 2px solid $border-color;
     border-radius: 20px;
     overflow: hidden;
     width: 50%;
@@ -293,7 +476,7 @@ body {
 .map-container {
     height: 200px; // Xarita balandligi
     background-color: #f5f5f5;
-    
+
     img {
         width: 100%;
         height: 100%;
@@ -326,7 +509,7 @@ body {
         font-size: 14px;
         color: $light-text-color;
         @include flex-center-y;
-        
+
         .fas {
             color: $red-accent;
             margin-right: 8px;
@@ -357,12 +540,13 @@ body {
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 10px;
-        
+
         span {
             font-weight: 400;
             color: $red-accent;
         }
     }
+
     .copyright {
         font-size: 11px;
         line-height: 1.4;
@@ -374,7 +558,7 @@ body {
 .footer-nav {
     display: flex;
     gap: 40px;
-    
+
     @media (max-width: 768px) {
         gap: 20px;
     }
@@ -382,15 +566,15 @@ body {
     .nav-column {
         list-style: none;
         padding: 0;
-        
+
         li {
             margin-bottom: 8px;
-            
+
             a {
                 text-decoration: none;
                 color: $text-color;
                 font-size: 14px;
-                
+
                 &:hover {
                     color: $red-accent;
                 }
@@ -418,7 +602,7 @@ body {
         font-size: 15px;
         margin-bottom: 10px;
         transition: background-color 0.2s;
-        
+
         &:hover {
             background-color: darken($red-accent, 10%);
         }
@@ -428,7 +612,7 @@ body {
         font-size: 13px;
         color: $text-color;
         @include flex-center-y;
-        
+
         .fas {
             color: $red-accent;
             margin-right: 8px;
