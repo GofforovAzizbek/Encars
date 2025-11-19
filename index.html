@@ -1,13 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encars</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-    <header>
-        <h1>hello, world</h1>   
+    <!-- Header section -->
+    <header class="header">
+        <div class="container flexes">
+            <a href="index.html" class="header__link">
+                <img src="assets/img/logo.svg" class="header__link--logo">
+            </a>
+
+            <!-- Navigation Bar -->
+            <nav class="header__nav">
+                <ul class="header__nav__list flexes">
+                    <li class="header__nav__list__item">
+                        <a class="header__nav__list__item--link">Авто из Кореи</a>
+                    </li>
+
+                    <li class="header__nav__list__item">
+                        <a class="header__nav__list__item--link">Авто из Казахстана</a>
+                    </li>
+
+                    <li class="header__nav__list__item">
+                        <a class="header__nav__list__item--link">Авто из ОАЭ</a>
+                    </li>
+
+                    <li class="header__nav__list__item">
+                        <a class="header__nav__list__item--link">Авто из Китая</a>
+                    </li>
+
+                    <li class="header__nav__list__item">
+                        <a class="header__nav__list__item--link">О нас</a>
+                    </li>
+
+                    <li class="header__nav__list__item">
+                        <a class="header__nav__list__item--link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <a class="header__left__btn btn-styles flexes">
+                <img src="assets/img/telephone.svg">
+                +7 (800) 011-11-11
+            </a>
+        </div>
+
+        <div class="container">
+            <section class="hero flexes" style="align-items: bottom;">
+                <div class="hero__wrap">
+                    <h1 class="hero__wrap__title">Автомобили под заказ</h1>
+                    <ul class="hero__wrap__list flexes">
+                        <li class="hero__wrap__list__item flexes">
+                            <img src="assets/img/done.svg" class="hero__wrap__list__item--icon">
+                            <p class="hero__wrap__list__item--text">Из Южной Кореи</p>
+                            <img src="assets/img/korean.svg" class="hero__wrap__list__item--flag">
+                        </li>
+                        <li class="hero__wrap__list__item flexes">
+                            <img src="assets/img/done.svg" class="hero__wrap__list__item--icon">
+                            <p class="hero__wrap__list__item--text">С доставкой по всей России</p>
+                        </li>
+                        <li class="hero__wrap__list__item flexes">
+                            <img src="assets/img/done.svg" class="hero__wrap__list__item--icon">
+                            <p class="hero__wrap__list__item--text">ВЫГОДА до 40% от цены на <br>российском рынке</p>
+                        </li>
+
+                        <div class="hero__wrap__list__links flexes">
+                            <a class="hero__wrap__list__links__btn btn-styles">Получить консультацию</a>
+                            <a class="hero__wrap__list__links__btn">
+                                <img src="assets/img/telegram.svg" class="hero__wrap__list__links__btn--icon">
+                            </a>
+                            <a class="hero__wrap__list__links__btn">
+                                <img src="assets/img/youtube.svg" class="hero__wrap__list__links__btn--icon">
+                            </a>
+                        </div>
+                    </ul>
+                </div>
+                <div class="hero__wrap">
+                    <img src="assets/img/cars.png" class="hero__wrap--img">
+                </div>
+            </section>
+        </div>
     </header>
 </body>
+
 </html>
