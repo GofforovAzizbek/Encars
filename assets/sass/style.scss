@@ -86,6 +86,7 @@ ul {
         border-radius: 24px;
         border: 1px solid #FFFFFF;
         background: #FFFFFFA3;
+
         &__title {
             font-family: Montserrat;
             font-weight: 800;
@@ -121,6 +122,7 @@ ul {
                     line-height: 36px;
                     color: #000000;
                 }
+
                 &:nth-child(3) {
                     align-items: baseline;
                 }
@@ -136,6 +138,300 @@ ul {
                     font-style: Bold;
                 }
             }
+        }
+    }
+
+    &__wrap:nth-child(2) {
+        padding: 0;
+        position: relative;
+        border: none;
+        background: none;
+        right: 170px;
+        top: 60px;
+    }
+}
+
+.steps {
+    padding: 100px 0 60px 0;
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 50px;
+        line-height: 69px;
+        color: #000000;
+        margin-bottom: 24px;
+    }
+
+    &__subtitle {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 24px;
+        line-height: 34px;
+        color: #3D3D3D;
+        margin-bottom: 70px;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__item {
+        padding: 40px 25px;
+        border-right: 1px dashed #D6A7AF;
+        border-bottom: 1px dashed #D6A7AF;
+
+        &:nth-child(4) {
+            border-right: none;
+        }
+
+        &:nth-child(8) {
+            border-right: none;
+            // border-bottom: none;
+        }
+    }
+
+    &__item:nth-child(-n+4) {
+        border-top: none;
+    }
+
+    &__item:nth-child(n+5):nth-child(-n+8) {
+        border-top: none;
+    }
+
+    &__item--highlight {
+        // background: #fff;
+        // // border-radius: 12px;
+        // // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        // // border: none !important;
+    }
+
+    &__num {
+        gap: 30px;
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 60px;
+        line-height: 69px;
+        color: #FA002C;
+        margin-bottom: 24px;
+    }
+
+    &__text {
+        font-family: Montserrat;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 18px;
+        line-height: 26px;
+        color: #000;
+    }
+}
+
+
+$main-bg: #fff;
+$footer-bg: #f4f4f4; // Ochiq kulrang fon
+$red-accent: #ff0033;
+$text-color: #333;
+$light-text-color: #666;
+$border-color: #ffcdd5; // Engil pushti chegara
+
+@mixin flex-center-y {
+    display: flex;
+    align-items: center;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: $text-color;
+    background-color: $main-bg;
+    line-height: 1.6;
+}
+
+.contacts-section {
+    padding: 40px 0 60px;
+}
+
+.contacts-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.contact-blocks-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+
+    @media (max-width: 900px) {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.contact-block {
+    background-color: white;
+    border: 2px solid $border-color; 
+    border-radius: 20px;
+    overflow: hidden;
+    width: 50%;
+    min-width: 450px; // Katta ekranlar uchun minimal kenglik
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+    @media (max-width: 900px) {
+        width: 100%;
+        min-width: unset;
+    }
+
+    @media (max-width: 550px) {
+        min-width: unset;
+    }
+}
+
+.map-container {
+    height: 200px; // Xarita balandligi
+    background-color: #f5f5f5;
+    
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Rasmning konteynerni to'ldirishi
+    }
+}
+
+.contact-info {
+    padding: 20px 25px;
+
+    .info-row {
+        @include flex-center-y;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .office-name {
+        font-size: 18px;
+        font-weight: 600;
+        color: $text-color;
+    }
+
+    .phone-number {
+        font-size: 18px;
+        font-weight: bold;
+        color: $red-accent; // Telefon raqami qizil rangda
+    }
+
+    .address {
+        font-size: 14px;
+        color: $light-text-color;
+        @include flex-center-y;
+        
+        .fas {
+            color: $red-accent;
+            margin-right: 8px;
+        }
+    }
+}
+
+.main-footer {
+    background-color: $footer-bg;
+    padding: 30px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr 1fr;
+    gap: 30px;
+    align-items: flex-start;
+    padding: 20px 0;
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr; // Kichik ekranlarda bir ustun
+    }
+}
+
+.footer-left {
+    .logo {
+        font-family: 'Times New Roman', serif; // Logotip uchun maxsus shrift
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        
+        span {
+            font-weight: 400;
+            color: $red-accent;
+        }
+    }
+    .copyright {
+        font-size: 11px;
+        line-height: 1.4;
+        color: $light-text-color;
+        max-width: 300px;
+    }
+}
+
+.footer-nav {
+    display: flex;
+    gap: 40px;
+    
+    @media (max-width: 768px) {
+        gap: 20px;
+    }
+
+    .nav-column {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            margin-bottom: 8px;
+            
+            a {
+                text-decoration: none;
+                color: $text-color;
+                font-size: 14px;
+                
+                &:hover {
+                    color: $red-accent;
+                }
+            }
+        }
+    }
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; // O'ng tomonga moslash
+
+    @media (max-width: 768px) {
+        align-items: flex-start;
+    }
+
+    .footer-phone-btn {
+        background-color: $red-accent;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 15px;
+        margin-bottom: 10px;
+        transition: background-color 0.2s;
+        
+        &:hover {
+            background-color: darken($red-accent, 10%);
+        }
+    }
+
+    .footer-address {
+        font-size: 13px;
+        color: $text-color;
+        @include flex-center-y;
+        
+        .fas {
+            color: $red-accent;
+            margin-right: 8px;
         }
     }
 }
