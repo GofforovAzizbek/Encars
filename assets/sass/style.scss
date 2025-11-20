@@ -139,6 +139,10 @@ ul {
                 }
             }
         }
+        &--img {
+            max-width: 200%;
+            width: 1050px;
+        }
     }
 
     &__wrap:nth-child(2) {
@@ -146,8 +150,8 @@ ul {
         position: relative;
         border: none;
         background: none;
-        right: 170px;
-        top: 60px;
+        right: 240px;
+        top: 80px;
     }
 }
 
@@ -294,6 +298,7 @@ $breakpoint-mobile: 768px;
     &__image-wrapper {}
 
     &__image {
+        width: 100%;
         padding: 15px;
     }
 
@@ -619,3 +624,149 @@ body {
         }
     }
 }
+
+
+/* ---------------- HEADER ---------------- */
+@media (max-width: 1024px) {
+    .header .container {
+        flex-direction: row;
+        gap: 20px;
+    }
+    .header__nav__list {
+        gap: 25px;
+    }
+    .hero__wrap:nth-child(2) {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+    }
+    .header__nav__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .hero__wrap:nth-child(2) {
+        display: none;
+    }
+}
+
+/* ---------------- HERO SECTION ---------------- */
+@media (max-width: 1024px) {
+    .hero__wrap__title {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .hero__wrap:nth-child(2) {
+        display: none;
+    }
+    .hero {
+        padding: 40px 0;
+    }
+}
+@media (max-width: 768px) {
+    .hero__wrap {
+        padding: 40px 20px !important;
+    }
+    .hero__wrap__title {
+        font-size: 36px;
+        line-height: 46px;
+        text-align: center;
+    }
+    .hero__wrap__list {
+        align-items: center !important;
+    }
+    .hero__wrap:nth-child(2) {
+        display: none;
+    }
+}
+@media (max-width: 500px) {
+    .hero__wrap__title {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .hero__wrap:nth-child(2) {
+        display: none;
+    }
+}
+
+/* ---------------- STEPS SECTION ---------------- */
+@media (max-width: 1024px) {
+    .steps__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .steps__grid {
+        grid-template-columns: 1fr;
+    }
+    .steps__num {
+        font-size: 40px;
+    }
+    .steps__text {
+        font-size: 16px;
+    }
+}
+
+/* ---------------- ROCARS SECTION ---------------- */
+@media (max-width: 1024px) {
+    .section__rocars__wrapper {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 768px) {
+    .section__rocars__wrapper {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ---------------- CAR CARD ---------------- */
+@media (max-width: 1024px) {
+    .car-card__title {
+        font-size: 20px;
+    }
+    .car-card__price-amount-new {
+        font-size: 1.2em;
+    }
+}
+@media (max-width: 600px) {
+    .car-card {
+        border-radius: 20px;
+    }
+    .car-card__content {
+        padding: 15px;
+    }
+}
+
+/* ---------------- CONTACTS SECTION ---------------- */
+@media (max-width: 900px) {
+    .contact-blocks-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .contact-block {
+        min-width: unset;
+        width: 100%;
+    }
+}
+
+/* ---------------- FOOTER ---------------- */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-right {
+        align-items: center !important;
+    }
+}
+
