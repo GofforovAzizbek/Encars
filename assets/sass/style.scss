@@ -72,7 +72,7 @@ ul {
 
     &__nav {
         &__list {
-            gap: 48px;
+            gap: 44px;
 
             &__item {
                 &--link {
@@ -171,7 +171,7 @@ ul {
         border: none;
         background: none;
         right: 240px;
-        top: 80px;
+        top: 74px;
     }
 }
 
@@ -274,7 +274,7 @@ $breakpoint-mobile: 768px;
 }
 
 .section__rocars {
-    padding: 40px 0;
+    padding: 180px 0 100px;
 
     &__title {
         font-size: 2em;
@@ -458,6 +458,56 @@ $breakpoint-mobile: 768px;
 }
 
 
+.section__encars {
+    padding: 70px;
+    background-image: url("../img/encars-bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 7px solid #E7E7E7;
+    border-radius: 36px;
+
+    &__wrap {
+        max-width: 700px;
+        width: 100%;
+        align-items: start;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 50px;
+        line-height: 69px;
+        color: #000;
+        margin-bottom: 24px;
+
+        span {
+            color: #FA002C;
+        }
+    }
+
+    &__text {
+        padding-right: 60px;
+        font-family: Montserrat;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 22px;
+        color: #292929;
+        margin-bottom: 50px;
+    }
+
+}
+
+
+.section__encars__text {}
+
+.section__encars__btn {}
+
+
+
+
 $main-bg: #fff;
 $footer-bg: #f4f4f4;
 $red-accent: #ff0033;
@@ -478,7 +528,7 @@ body {
 }
 
 .contacts-section {
-    padding: 40px 0 60px;
+    padding: 110px 0;
 }
 
 .contacts-title {
@@ -500,7 +550,7 @@ body {
 
 .contact-block {
     background-color: white;
-    border: 7px solid #FA002C33; 
+    border: 7px solid #FA002C33;
     border-radius: 36px;
     overflow: hidden;
     width: 50%;
@@ -518,7 +568,6 @@ body {
 
 .map-container {
     padding: 15px;
-    background-color: #f5f5f5;
 
     img {
         width: 100%;
@@ -561,14 +610,15 @@ body {
 }
 
 .main-footer {
-    background-color: $footer-bg;
+    background-color: #EEEEEE;
+    border-radius: 50px 50px 0 0;
     padding: 30px 0;
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: 1.5fr 2fr 1fr;
-    gap: 30px;
+    gap: 90px;
     align-items: flex-start;
     padding: 20px 0;
 
@@ -579,10 +629,7 @@ body {
 
 .footer-left {
     .logo {
-        font-family: 'Times New Roman', serif;
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
 
         span {
             font-weight: 400;
@@ -591,16 +638,19 @@ body {
     }
 
     .copyright {
-        font-size: 11px;
-        line-height: 1.4;
-        color: $light-text-color;
-        max-width: 300px;
+        width: 420px;
+        font-family: Montserrat;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 22px;
+        color: #292929;
     }
 }
 
 .footer-nav {
     display: flex;
-    gap: 40px;
+    gap: 90px;
 
     @media (max-width: 768px) {
         gap: 20px;
@@ -614,9 +664,12 @@ body {
             margin-bottom: 8px;
 
             a {
-                text-decoration: none;
-                color: $text-color;
-                font-size: 14px;
+                font-family: Montserrat;
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 18px;
+                line-height: 26px;
+                color: #000000;
 
                 &:hover {
                     color: $red-accent;
@@ -655,6 +708,7 @@ body {
         font-size: 13px;
         color: $text-color;
         @include flex-center-y;
+        width: 210px;
 
         .fas {
             color: $red-accent;
