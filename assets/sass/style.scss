@@ -56,6 +56,20 @@ ul {
         justify-content: space-between;
     }
 
+    @media (max-width: 1600px) {
+        &__nav {
+            display: none;
+        }
+
+        .hero__wrap:nth-child(2) {
+            display: none;
+        }
+    }
+
+    .menu {
+        display: none;
+    }
+
     &__nav {
         &__list {
             gap: 48px;
@@ -137,8 +151,14 @@ ul {
                     font-family: Montserrat;
                     font-style: Bold;
                 }
+
+                // &__btn:nth-child(2), {
+                // &__btn:nth-child(3)
+                //     padding: 0;
+                // }
             }
         }
+
         &--img {
             max-width: 200%;
             width: 1050px;
@@ -235,7 +255,6 @@ ul {
     }
 }
 
-// SCSS kodi o'zgarishsiz qoladi, chunki u 3 ustunli gridni qo'llab-quvvatlaydi.
 
 // O'zgaruvchilar (Variables)
 $container-max-width: 1460px;
@@ -351,7 +370,7 @@ $breakpoint-mobile: 768px;
 
     &__price-info {
         display: flex;
-        width: 100%;
+        width: 104%;
         margin-bottom: 20px;
     }
 
@@ -370,47 +389,67 @@ $breakpoint-mobile: 768px;
             }
 
             .car-card__price-label-old {
-                font-size: 0.75em;
+                font-family: Montserrat;
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 16px;
+                line-height: 20px;
+                color: #2B2B2B;
+
+                span {
+                    font-family: Montserrat;
+                    font-weight: 500;
+                    font-style: Medium;
+                    font-size: 25px;
+                    line-height: 100%;
+                    color: #000;
+                }
             }
         }
 
         &--new {
+
             background-color: $color-light-pink;
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            border-radius: 40px 0 0 40px;
+            padding: 16px 50px 16px 22px;
+            // // text-align: center;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: right;
         }
     }
 
     &__price-amount-new {
-        font-size: 1.4em;
-        font-weight: 900;
-        color: $color-primary-red;
-        margin: 0;
-        line-height: 1.2;
+        font-family: Montserrat;
+        font-weight: 800;
+        font-style: ExtraBold;
+        font-size: 24px;
+        line-height: 100%;
+        color: #FA002C;
     }
 
     &__price-label-new {
-        font-size: 0.75em;
-        color: $color-primary-red;
-        margin: 0;
-        line-height: 1.2;
+        width: 150px;
+        font-family: Montserrat;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 20px;
+        color: #2B2B2B;
     }
 
     &__button {
-        width: 100%;
-        background-color: $color-primary-red;
-        color: white;
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 16px;
+        line-height: 100%;
+        color: #fff;
+        border-radius: 14px;
+        padding: 25px 56px;
         border: none;
-        padding: 12px 20px;
-        font-size: 1em;
-        font-weight: bold;
-        text-transform: uppercase;
-        border-radius: 8px;
-        cursor: pointer;
+        background-color: #FA002C;
+        box-shadow: 0px 12px 60px 0px #FA002C66;
 
         &:hover {
             background-color: darken($color-primary-red, 10%);
@@ -434,7 +473,7 @@ $border-color: #ffcdd5;
 body {
     font-family: Arial, sans-serif;
     color: $text-color;
-    background-color: $main-bg;
+    // background-color: $main-bg;
     line-height: 1.6;
 }
 
@@ -461,12 +500,11 @@ body {
 
 .contact-block {
     background-color: white;
-    border: 2px solid $border-color;
-    border-radius: 20px;
+    border: 7px solid #FA002C33; 
+    border-radius: 36px;
     overflow: hidden;
     width: 50%;
-    min-width: 450px; // Katta ekranlar uchun minimal kenglik
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    min-width: 450px;
 
     @media (max-width: 900px) {
         width: 100%;
@@ -479,13 +517,13 @@ body {
 }
 
 .map-container {
-    height: 200px; // Xarita balandligi
+    padding: 15px;
     background-color: #f5f5f5;
 
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover; // Rasmning konteynerni to'ldirishi
+        object-fit: cover;
     }
 }
 
@@ -507,7 +545,7 @@ body {
     .phone-number {
         font-size: 18px;
         font-weight: bold;
-        color: $red-accent; // Telefon raqami qizil rangda
+        color: $red-accent;
     }
 
     .address {
@@ -535,13 +573,13 @@ body {
     padding: 20px 0;
 
     @media (max-width: 768px) {
-        grid-template-columns: 1fr; // Kichik ekranlarda bir ustun
+        grid-template-columns: 1fr;
     }
 }
 
 .footer-left {
     .logo {
-        font-family: 'Times New Roman', serif; // Logotip uchun maxsus shrift
+        font-family: 'Times New Roman', serif;
         font-size: 28px;
         font-weight: 700;
         margin-bottom: 10px;
@@ -591,7 +629,7 @@ body {
 .footer-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; // O'ng tomonga moslash
+    align-items: flex-end;
 
     @media (max-width: 768px) {
         align-items: flex-start;
@@ -629,28 +667,79 @@ body {
 /* ---------------- HEADER ---------------- */
 @media (max-width: 1024px) {
     .header .container {
+        justify-content: flex-end;
         flex-direction: row;
         gap: 20px;
     }
+
+    .menu {
+        display: block;
+    }
+
+    .header__link--logo {
+        width: 160px;
+    }
+
+    .header__left__btn {
+        display: none;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
     .header__nav__list {
         gap: 25px;
     }
+
     .hero__wrap:nth-child(2) {
         display: none;
     }
-}
-@media (max-width: 768px) {
+
     .header .container {
-        flex-direction: column;
+        justify-content: space-between;
+
+        .menu {
+            display: block;
+            display: flex;
+            justify-content: start;
+        }
     }
+}
+
+@media (max-width: 768px) {
+
+    .hero__wrap__list__links {
+        // flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .menu {
+        display: block;
+        align-items: flex-start;
+    }
+
+    .header .container {
+        justify-content: space-between;
+
+        .menu {
+            display: block;
+            display: flex;
+            justify-content: start;
+        }
+    }
+
     .header__nav__list {
         flex-direction: column;
         align-items: center;
         gap: 15px;
     }
+
     .hero__wrap:nth-child(2) {
         display: none;
     }
+
 }
 
 /* ---------------- HERO SECTION ---------------- */
@@ -659,34 +748,41 @@ body {
         font-size: 50px;
         line-height: 60px;
     }
+
     .hero__wrap:nth-child(2) {
         display: none;
     }
+
     .hero {
         padding: 40px 0;
     }
 }
+
 @media (max-width: 768px) {
     .hero__wrap {
         padding: 40px 20px !important;
     }
+
     .hero__wrap__title {
         font-size: 36px;
         line-height: 46px;
-        text-align: center;
+        // text-align: center;
     }
-    .hero__wrap__list {
-        align-items: center !important;
-    }
+
+    // .hero__wrap__list {
+    //     align-items: center !important;
+    // }
     .hero__wrap:nth-child(2) {
         display: none;
     }
 }
+
 @media (max-width: 500px) {
     .hero__wrap__title {
         font-size: 28px;
         line-height: 36px;
     }
+
     .hero__wrap:nth-child(2) {
         display: none;
     }
@@ -698,13 +794,16 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 600px) {
     .steps__grid {
         grid-template-columns: 1fr;
     }
+
     .steps__num {
         font-size: 40px;
     }
+
     .steps__text {
         font-size: 16px;
     }
@@ -716,6 +815,7 @@ body {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
+
 @media (max-width: 768px) {
     .section__rocars__wrapper {
         grid-template-columns: 1fr !important;
@@ -727,14 +827,22 @@ body {
     .car-card__title {
         font-size: 20px;
     }
+
     .car-card__price-amount-new {
-        font-size: 1.2em;
+        font-family: Montserrat;
+        font-weight: 800;
+        font-style: ExtraBold;
+        font-size: 24px;
+        line-height: 100%;
+        color: #FA002C;
     }
 }
+
 @media (max-width: 600px) {
     .car-card {
         border-radius: 20px;
     }
+
     .car-card__content {
         padding: 15px;
     }
@@ -747,6 +855,7 @@ body {
         gap: 20px;
     }
 }
+
 @media (max-width: 600px) {
     .contact-block {
         min-width: unset;
@@ -760,13 +869,14 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 }
+
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
     }
+
     .footer-right {
         align-items: center !important;
     }
 }
-
