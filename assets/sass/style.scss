@@ -256,6 +256,101 @@ ul {
 }
 
 
+.section__forms {
+    &__wrapper {
+        border: 7px solid;
+        border-radius: 36px;
+
+
+        &__wrap {
+            width: 550px;
+            height: 530px;
+            box-shadow: 0px 2px 50px 0px #23252612;
+            border-radius: 22px;
+            flex-direction: column;
+            align-items: start;
+            padding: 50px 10px 70px 50px;
+            position: relative;
+
+            &--title {
+                font-family: Montserrat;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 50px;
+                line-height: 69px;
+                color: #000;
+                margin-bottom: 20px;
+            }
+
+            &--text {
+                font-family: Montserrat;
+                font-weight: 500;
+                font-style: Medium;
+                font-size: 18px;
+                line-height: 26px;
+                padding-right: 60px;
+                color: #000;
+                margin-bottom: 36px;
+            }
+
+            &--num {
+                border: 1px solid #C9C9C9;
+                border-radius: 14px;
+                padding: 26px 0 26px 24px;
+                width: 94%;
+                margin-bottom: 20px;
+                font-family: Montserrat;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 16px;
+                line-height: 100%;
+            }
+
+            &--num::placeholder {
+                color: #000;
+            }
+
+            &--btn {
+                font-family: Montserrat;
+                font-weight: 700;
+                font-style: Bold;
+                font-size: 16px;
+                line-height: 100%;
+                color: #fff;
+                border-radius: 14px;
+                padding: 26px 36px;
+                border: none;
+                background-color: #FA002C;
+                box-shadow: 0px 12px 60px 0px #FA002C66;
+            }
+
+            img {
+                // width: 68px;
+                position: absolute;
+                right: 100px;
+                bottom: 84px;
+            }
+        }
+        
+    }
+
+}
+
+.section__forms__wrapper__wrap {}
+
+.section__forms__wrapper__wrap--title {}
+
+.section__forms__wrapper__wrap--text {}
+
+.section__forms__wrapper__wrap--num {}
+
+.section__forms__wrapper__wrap--btn {}
+
+.car-card__button {}
+
+.section__forms__wrapper__wrap__box {}
+
+
 // O'zgaruvchilar (Variables)
 $container-max-width: 1460px;
 $color-primary-red: #ff0033;
