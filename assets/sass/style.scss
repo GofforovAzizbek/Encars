@@ -266,6 +266,11 @@ ul {
         justify-content: space-between;
         padding: 80px 25px 100px 50px;
 
+        @media (max-width: 1400px) {
+            gap: 50px;
+            flex-direction: column;
+        }
+
         &__wrap {
             width: 550px;
             height: 530px;
@@ -584,15 +589,81 @@ $breakpoint-mobile: 768px;
         display: grid;
         grid-template-columns: repeat(3, 2fr);
         gap: 30px;
+        padding-bottom: 50px;
+        margin-bottom: 24px;
+        border-bottom: 1px solid #C2C2C2;
+
+        @media (max-width: 1550px) {
+            box-shadow: none;
+            grid-template-columns: repeat(2, 2fr);
+        }
+
+        @media (max-width: 1000px) {
+            width: 100%;
+            grid-template-columns: 1fr;
+        }
+
+        div {
+            height: 98%;
+            border-radius: 36px;
+            // box-shadow: 0px 10px 50px 0px #00000033;
+        }
+
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        div {
+            justify-content: start;
+            margin-left: auto;
+
+            @media (max-width: 1200px) {
+                flex-direction: column;
+                // align-items: start;
+                gap: 20px;
+            }
+
+            span {
+                width: 24px;
+                height: 4px;
+                background-color: #FA002C;
+            }
+
+            p {
+                margin-left: 70px;
+                font-family: Montserrat;
+                font-weight: 400;
+                font-style: Regular;
+                font-size: 30px;
+                line-height: 100%;
+                color: #000;
+            }
+
+            h3 {
+                margin-left: 60px;
+                font-family: Montserrat;
+                font-weight: 600;
+                font-style: SemiBold;
+                font-size: 36px;
+                line-height: 100%;
+                color: #FA002C;
+            }
+        }
+
+        div:nth-child(2) {
+            h3 {
+                margin-left: 50px;
+                color: #000;
+            }
+        }
     }
 }
 
-.container {}
-
-
-
-
 .section__encars {
+    margin-top: 100px;
     padding: 70px;
     background-image: url("../img/encars-bg.png");
     background-size: cover;
@@ -711,7 +782,7 @@ body {
 }
 
 .contact-info {
-    padding: 20px 25px;
+    padding: 30px 40px 45px 40px;
 
     .info-row {
         @include flex-center-y;
@@ -720,20 +791,31 @@ body {
     }
 
     .office-name {
-        font-size: 18px;
-        font-weight: 600;
-        color: $text-color;
+        font-family: Montserrat;
+        font-weight: 500;
+        font-style: Medium;
+        font-size: 30px;
+        line-height: 100%;
+        margin-bottom: 14px;
+        color: #000;
     }
 
     .phone-number {
-        font-size: 18px;
-        font-weight: bold;
-        color: $red-accent;
+        font-family: Montserrat;
+        font-weight: 600;
+        font-style: SemiBold;
+        font-size: 30px;
+        line-height: 100%;
+        color: #000;
     }
 
     .address {
-        font-size: 14px;
-        color: $light-text-color;
+        font-family: Montserrat;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 22px;
+        color: #292929;
         @include flex-center-y;
 
         .fas {
@@ -814,24 +896,34 @@ body {
 }
 
 .footer-right {
+    width: 240px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    div {
+        align-items: start;
+        gap: 2px;
+    }
 
     @media (max-width: 768px) {
         align-items: flex-start;
     }
 
     .footer-phone-btn {
+        gap: 6px;
         background-color: $red-accent;
         color: white;
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 15px;
+        padding: 16px 28px;
         margin-bottom: 10px;
         transition: background-color 0.2s;
+        font-family: Poppins;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 18px;
+        line-height: 26px;
+        border-radius: 8px;
+
 
         &:hover {
             background-color: darken($red-accent, 10%);
@@ -839,10 +931,12 @@ body {
     }
 
     .footer-address {
-        font-size: 13px;
-        color: $text-color;
-        @include flex-center-y;
-        width: 210px;
+        font-family: Montserrat;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 22px;
+        color: #292929;
 
         .fas {
             color: $red-accent;

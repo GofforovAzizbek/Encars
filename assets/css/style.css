@@ -231,6 +231,15 @@ ul {
           justify-content: space-between;
   padding: 80px 25px 100px 50px;
 }
+@media (max-width: 1400px) {
+  .section__forms__wrapper {
+    gap: 50px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .section__forms__wrapper__wrap {
   width: 550px;
   height: 530px;
@@ -533,9 +542,82 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, 2fr);
   gap: 30px;
+  padding-bottom: 50px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #C2C2C2;
+}
+@media (max-width: 1550px) {
+  .section__price__wrapper {
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    grid-template-columns: repeat(2, 2fr);
+  }
+}
+@media (max-width: 1000px) {
+  .section__price__wrapper {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+.section__price__wrapper div {
+  height: 98%;
+  border-radius: 36px;
+}
+.section__price__box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 30px;
+}
+.section__price__box div {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-left: auto;
+}
+@media (max-width: 1200px) {
+  .section__price__box div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
+.section__price__box div span {
+  width: 24px;
+  height: 4px;
+  background-color: #FA002C;
+}
+.section__price__box div p {
+  margin-left: 70px;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 30px;
+  line-height: 100%;
+  color: #000;
+}
+.section__price__box div h3 {
+  margin-left: 60px;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 36px;
+  line-height: 100%;
+  color: #FA002C;
+}
+.section__price__box div:nth-child(2) h3 {
+  margin-left: 50px;
+  color: #000;
 }
 
 .section__encars {
+  margin-top: 100px;
   padding: 70px;
   background-image: url("../img/encars-bg.png");
   background-size: cover;
@@ -645,7 +727,7 @@ body {
 }
 
 .contact-info {
-  padding: 20px 25px;
+  padding: 30px 40px 45px 40px;
 }
 .contact-info .info-row {
   display: -webkit-box;
@@ -660,18 +742,29 @@ body {
   margin-bottom: 10px;
 }
 .contact-info .office-name {
-  font-size: 18px;
-  font-weight: 600;
-  color: #333;
+  font-family: Montserrat;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 30px;
+  line-height: 100%;
+  margin-bottom: 14px;
+  color: #000;
 }
 .contact-info .phone-number {
-  font-size: 18px;
-  font-weight: bold;
-  color: #ff0033;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-style: SemiBold;
+  font-size: 30px;
+  line-height: 100%;
+  color: #000;
 }
 .contact-info .address {
-  font-size: 14px;
-  color: #666;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 22px;
+  color: #292929;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -753,6 +846,7 @@ body {
 }
 
 .footer-right {
+  width: 240px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -764,6 +858,12 @@ body {
       -ms-flex-align: end;
           align-items: flex-end;
 }
+.footer-right div {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  gap: 2px;
+}
 @media (max-width: 768px) {
   .footer-right {
     -webkit-box-align: start;
@@ -772,30 +872,30 @@ body {
   }
 }
 .footer-right .footer-phone-btn {
+  gap: 6px;
   background-color: #ff0033;
   color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
+  padding: 16px 28px;
   margin-bottom: 10px;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
+  font-family: Poppins;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 18px;
+  line-height: 26px;
+  border-radius: 8px;
 }
 .footer-right .footer-phone-btn:hover {
   background-color: rgb(204, 0, 40.8);
 }
 .footer-right .footer-address {
-  font-size: 13px;
-  color: #333;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 210px;
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 16px;
+  line-height: 22px;
+  color: #292929;
 }
 .footer-right .footer-address .fas {
   color: #ff0033;
