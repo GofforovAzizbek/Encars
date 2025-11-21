@@ -177,7 +177,7 @@ ul {
 
 .steps {
     background-color: #F4F6F8;
-    padding: 100px 0 80px 0;
+    padding: 140px 0 100px 0;
 
     &__title {
         font-family: Montserrat;
@@ -257,10 +257,14 @@ ul {
 
 
 .section__forms {
-    &__wrapper {
-        border: 7px solid;
-        border-radius: 36px;
+    padding-top: 70px;
 
+    &__wrapper {
+        border: 7px solid #E7E7E7;
+        border-radius: 36px;
+        align-items: start;
+        justify-content: space-between;
+        padding: 80px 25px 100px 50px;
 
         &__wrap {
             width: 550px;
@@ -331,24 +335,33 @@ ul {
                 bottom: 84px;
             }
         }
-        
-    }
 
+        &__box {
+            display: grid;
+            grid-template-columns: repeat(2, 4fr);
+            gap: 45px;
+
+            div {
+                flex-direction: column;
+                align-items: start;
+
+                img {
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    font-family: Montserrat;
+                    font-weight: 500;
+                    font-style: Medium;
+                    font-size: 18px;
+                    line-height: 26px;
+                    color: #000;
+                }
+            }
+        }
+    }
 }
 
-.section__forms__wrapper__wrap {}
-
-.section__forms__wrapper__wrap--title {}
-
-.section__forms__wrapper__wrap--text {}
-
-.section__forms__wrapper__wrap--num {}
-
-.section__forms__wrapper__wrap--btn {}
-
-.car-card__button {}
-
-.section__forms__wrapper__wrap__box {}
 
 
 // O'zgaruvchilar (Variables)
@@ -551,6 +564,32 @@ $breakpoint-mobile: 768px;
         }
     }
 }
+
+
+.section__price {
+    background-color: #F4F6F8;
+    padding: 100px 0;
+
+    &__title {
+        font-family: Montserrat;
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 50px;
+        line-height: 69px;
+        margin-bottom: 40px;
+        color: #000;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 2fr);
+        gap: 30px;
+    }
+}
+
+.container {}
+
+
 
 
 .section__encars {

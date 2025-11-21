@@ -157,7 +157,7 @@ ul {
 
 .steps {
   background-color: #F4F6F8;
-  padding: 100px 0 80px 0;
+  padding: 140px 0 100px 0;
 }
 .steps__title {
   font-family: Montserrat;
@@ -217,9 +217,19 @@ ul {
   color: #000;
 }
 
+.section__forms {
+  padding-top: 70px;
+}
 .section__forms__wrapper {
-  border: 7px solid;
+  border: 7px solid #E7E7E7;
   border-radius: 36px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 80px 25px 100px 50px;
 }
 .section__forms__wrapper__wrap {
   width: 550px;
@@ -301,6 +311,31 @@ ul {
   position: absolute;
   right: 100px;
   bottom: 84px;
+}
+.section__forms__wrapper__box {
+  display: grid;
+  grid-template-columns: repeat(2, 4fr);
+  gap: 45px;
+}
+.section__forms__wrapper__box div {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+.section__forms__wrapper__box div img {
+  margin-bottom: 16px;
+}
+.section__forms__wrapper__box div p {
+  font-family: Montserrat;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000;
 }
 
 .container {
@@ -479,6 +514,25 @@ ul {
 }
 .car-card__button:hover {
   background-color: rgb(204, 0, 40.8);
+}
+
+.section__price {
+  background-color: #F4F6F8;
+  padding: 100px 0;
+}
+.section__price__title {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 50px;
+  line-height: 69px;
+  margin-bottom: 40px;
+  color: #000;
+}
+.section__price__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 30px;
 }
 
 .section__encars {
